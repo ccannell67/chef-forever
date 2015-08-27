@@ -9,6 +9,7 @@ define :forever_service do
     variables({
       :name => params[:name],
       :user => params[:user],
+      :group => params[:group],
       :path => params[:path],
       :command => params[:command],
       :script => params[:script],
