@@ -40,8 +40,8 @@ NODE_PATH=/usr/local/lib/node_modules/
 APPLICATION_DIRECTORY=<%= @path %>
 APPLICATION_START=<%= @script %>
 APPLICATION_OPTIONS=<%= @script_options %>
-PIDFILE=<%= @path %>/var/run/$NAME.pid
-LOGFILE=<%= @path %>/var/log/$NAME.log
+PIDFILE=<%= @varpath %>/run/$NAME.pid
+LOGFILE=<%= @varpath %>/log/$NAME.log
 
 start() {
         #is it running

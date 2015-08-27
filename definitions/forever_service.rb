@@ -11,6 +11,7 @@ define :forever_service do
       :user => params[:user],
       :group => params[:group],
       :path => params[:path],
+      :varpath => params[:varpath],
       :command => params[:command],
       :script => params[:script],
       :script_options => params[:script_options],
