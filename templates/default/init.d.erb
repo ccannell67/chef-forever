@@ -40,6 +40,7 @@ NODE_PATH=/usr/local/lib/node_modules/
 APPLICATION_DIRECTORY=<%= @path %>
 APPLICATION_START=<%= @script %>
 APPLICATION_OPTIONS=<%= @script_options %>
+EXTRA_PARAMS=<%= @extra_params %>
 PIDFILE=<%= @varpath %>/run/$NAME.pid
 LOGFILE=<%= @varpath %>/log/$NAME.log
 
@@ -64,7 +65,9 @@ stop() {
                 PID=`sudo -H -u <%= @user %> forever list | grep \`cat $PIDFILE\` | awk '{print $8}'`
                 echo "Shutting down $NAME: "$PID
                 sudo -H -u <%= @user %> forever stop $PID
-                #rm -f $PIDFILE
+		sleep 3
+		pkill -9 node
+                rm -f $PIDFILE
                 RETVAL=$?
         else
                 echo "$NAME is not running."

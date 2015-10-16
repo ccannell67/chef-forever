@@ -15,6 +15,7 @@ define :forever_service do
       :command => params[:command],
       :script => params[:script],
       :script_options => params[:script_options],
+      :extra_params => params[:extra_params],
       :env_options => params[:env_options],
       :description => params[:description] || params[:name]
     })
